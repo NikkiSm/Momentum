@@ -34,29 +34,27 @@ function showTime() {
 let randomNum = getRandomNum();
 
 function setBg() {
-  
+let randomNum = randomNum.toString();
   let bgNum = randomNum.padstart(2, "0");
-  let BGimage = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/${bgNum}.jpg`;
-  body.style.backgroundImage = BGimage
-  //body.style.backgroundImage = BGimage
 
-
+  console.log("🚀 ~ file: script.js:38 ~ setBg ~ bgNum:", bgNum)
+  timeOfDay = getTimeOfDay();
+  body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg')`;
+ 
  }
 setBg()
 //function createString(number) {
   //return `${host}/login/oauth/authorize?client_id=${clientId}&scope=${scope}`
-//}
-
-createOAuthString('https://github.com', 'abc123', 'repo,user')
+//}*/
 function getTimeOfDay(){
   if (hours > 0 && hours < 6)
-   return 'Night';
+   return 'night';
   else if  (hours > 6 && hours < 12)
-  return 'Morning';
+  return 'morning';
   else if  (hours > 12 && hours < 18)
-  return 'Day';
+  return 'afternoon';
   else if  (hours > 18 && hours < 24)
-  return 'Evening';
+  return 'evening';
 }
 const greetingText = `Good ${timeOfDay}`;
 greeting.textContent = greetingText;
